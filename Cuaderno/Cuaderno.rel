@@ -1,0 +1,24 @@
+;; RefTeX parse info file
+;; File: /Users/ismael/Proyectos/AppInventor/Cuaderno/Cuaderno.tex
+;; User: ismael (Ismael Figueroa)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ismael/Proyectos/AppInventor/Cuaderno/")
+
+(label-numbers)
+
+(bof "/Users/ismael/Proyectos/AppInventor/Cuaderno/Cuaderno.tex")
+
+(eof "/Users/ismael/Proyectos/AppInventor/Cuaderno/Cuaderno.tex")
+))
+
