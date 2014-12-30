@@ -303,7 +303,67 @@ componentes de disposición unos dentro de otros.
 
 \end{itemize}
 
+\subsubsection*{Agregar los Botones Inferiores y el Componente Cámara}
 
+\begin{enumerate}
+
+\item Desde la \palette, arrastra un nuevo componente
+  \component{DisposiciónHorizontal} y ponlo abajo del lienzo.
+
+\item Luego arrastra dos componentes \component{Botón} adicionales en
+  el \viewer y ponlos dentro del \component{DisposiciónHorizontal} que
+  acabas de agregar. Cambia el nombre del primer botón por
+  \component{BotonCámara} y su \property{Texto} a ``Sacar
+  Foto''. Cambia el nombre del segundo botón por
+  \component{BotonLimpiar} y su \property{Texto} por ``Limpiar''.
+
+\item Arrastra dos botones más y colócalos al lado derecho del
+  \component{BotónLimpiar}.
+
+\item Nombra los nuevos botones como \component{BotónGrande} y
+  \component{BotónPequeño}, y pon su \property{Texto} como
+  ``PuntosGrandes'' y ``PuntosPequeños'' respectivamente.
+
+\item Desde la sección \media de la \palette, arrastra un componente
+  \component{Cámara} hacia el \viewer. Aparecerá en la sección de los
+  componentes no-visibles.
+
+\end{enumerate}
+	
+Una vez completados estos pasos, tu aplicación debería verse como en
+la~\Cref{fig:PaintPot4}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{figures/PaintPot4}
+\caption{Interfaz de usuario completa para \appName{PintaFotos}}
+\label{fig:PaintPot4}
+\end{figure}
+
+\paragraph{Prueba tu Aplicación!} ¿Aparece la foto del gatito debajo
+de los botones de la primera fila? ¿Aparece la última fila de botones abajo?
+
+\subsubsection*{Agregar Comportamiento a los Componentes}
+
+El próximo paso es definir cómo se comportan los componentes. Crear un
+programa de pintura puede parecer un desafío insuperable, pero quedate
+tranquilo! \AppInventor te facilita el trabajo: existen bloques muy
+fáciles de usar para manejar las funcionalidades de touch y arrastre,
+y para dibujar y sacar fotos.
+
+En el \designer, agregaste un componente \component{Lienzo} llamado
+\component{LienzoDeDibujo}. Como todos los componentes de ese tipo,
+\component{LienzoDeDibujo} tiene un evento \block{Tocar} y un evento
+\block{Arrastrado}. Programarás el evento \block{LienzoDibujo.Tocar}
+de tal manera que llame a la función
+\block{LienzoDibujo.DibujarCírculo}. Programarás el evento
+\block{LienzoDibujo.Arrastrado} de tal manera que llame a la función
+\block{LienzoDibujo.DibujarLínea}. Programarás luego los botones para
+configurar la propiedad \property{ColorDePintura} usando el bloque
+\block{poner LienzoDibujo.ColorPintura}, y para limpiar el
+\component{LienzoDeDibujo}; y finalmente, programarás como cambiar la
+\property{ImagenDeFondo} del lienzo por una foto sacada con la cámara
+del dispositivo.
 
 \section{Discusión y Ejercicios de Personalización}
 
