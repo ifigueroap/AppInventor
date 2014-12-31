@@ -1,0 +1,48 @@
+\documentclass[letterpaper,12pt]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%\newcommand{\noun}[1]{\textsc{#1}}
+%\providecommand{\tabularnewline}{\\}
+
+\usepackage{mystyle}
+
+\begin{document}
+\input{./tex/titulo.tex}
+\pagenumbering{Roman} %numero de paginas de indices en numeros romanos
+\tableofcontents %indice de capitulos, secciones y subsecciones
+\listoffigures   %indice de imagenes
+\cleardoublepage
+\listoftables    %indice de tablas
+\cleardoublepage
+
+\pagenumbering{arabic} %numeracion en numeros arabicos
+\setcounter{page}{1} %empezar enumerando la pagina 1
+\chapter*{Introducción}
+\input{./tex/introduccion.tex}
+\newpage
+\chapter{Introducción a la programación de aplicaciones móviles}
+\input{./tex/dia1.tex}
+\newpage
+\chapter{Dibujos, Animaciones y Juegos (Parte 1)}
+\input{./tex/dia2.tex}
+\newpage
+\chapter{Dibujos, Animaciones y Juegos (Parte 2)}
+\input{./tex/dia3.tex}
+\newpage
+\chapter{Mensajes de Texto}
+\input{./tex/dia4.tex}
+\newpage
+\chapter{Geolocalización y Sensores}
+\input{./tex/dia5.tex}
+\newpage
+\chapter{Trivias}
+\input{./tex/dia6.tex}
+\newpage
+\chapter{Procedimientos: Cómo crear nuevos bloques}
+\input{./tex/dia7.tex}
+
+%\nocite{*}
+%\input{tex/biblio.tex}
+
+
+\end{document}
