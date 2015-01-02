@@ -1,0 +1,29 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Tutorial: PintaFotos}{2}{section.1}
+\contentsline {paragraph}{Importante!}{5}{section*.10}
+\contentsline {paragraph}{Prueba tu aplicaci\IeC {\'o}n!}{5}{section*.11}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{6}{section*.14}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{8}{section*.19}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{12}{section*.27}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{14}{section*.32}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{16}{section*.37}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{18}{section*.44}
+\contentsline {section}{\numberline {2}Discusi\IeC {\'o}n y Ejercicios de Personalizaci\IeC {\'o}n}{20}{section.2}
+\contentsline {paragraph}{Preguntas/Discusi\IeC {\'o}n}{20}{section*.48}
+\contentsline {paragraph}{Ejercicios de Personalizaci\IeC {\'o}n}{21}{section*.50}
+\contentsline {section}{\numberline {3}Tutorial: Atrapa el Topo}{21}{section.3}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{32}{section*.72}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{34}{section*.76}
+\contentsline {paragraph}{Prueba tu Aplicaci\IeC {\'o}n!}{34}{section*.79}
+\contentsline {section}{\numberline {4}Material de Apoyo}{36}{section.4}
+\contentsline {paragraph}{Ejemplo: \IeC {\textquestiondown }C\IeC {\'o}mo dibujar un c\IeC {\'\i }rculo en (10,10)?}{36}{section*.85}
+\contentsline {paragraph}{Ejemplo: \IeC {\textquestiondown }C\IeC {\'o}mo dibujar un c\IeC {\'\i }rculo en el lugar donde el usuario toca el lienzo?}{37}{section*.87}
+\contentsline {paragraph}{Ejemplo: \IeC {\textquestiondown }C\IeC {\'o}mo mover una imagen al centro del lienzo?}{38}{section*.89}
+\contentsline {paragraph}{\IeC {\textquestiondown }Cu\IeC {\'a}ndo defines una variable?}{38}{section*.92}
+\contentsline {paragraph}{Ejemplo: \IeC {\textquestiondown }C\IeC {\'o}mo hacer para que cada vez que el usuario hace click se agranda el c\IeC {\'\i }rculo?}{39}{section*.93}
+\contentsline {paragraph}{Ejemplo: \IeC {\textquestiondown }C\IeC {\'o}mo tocar un sonido cada 1 segundo?}{40}{section*.97}
+\contentsline {paragraph}{Ejemplo 2: \IeC {\textquestiondown }C\IeC {\'o}mo tocar un sonido cada 5 segundos?}{40}{section*.99}
+\contentsline {paragraph}{Ejemplo 3: \IeC {\textquestiondown }C\IeC {\'o}mo desplazas una nave espacial suavemente por la pantalla?}{40}{section*.101}
+\contentsline {paragraph}{Ejemplo 4: Una pel\IeC {\'\i }cula es una secuencia de im\IeC {\'a}genes que se muestran muy r\IeC {\'a}pidamente}{41}{section*.103}
+\contentsline {paragraph}{Ejemplo 1: Reproducir un sonido cada 1 segundo, con botones ``Iniciar'' y ``Detener''}{41}{section*.105}
+\contentsline {paragraph}{Ejemplo 2: Cuando el usuario habla, la nave empieza a moverse. Cuando el usuario sacude el tel\IeC {\'e}fono, la nave se detiene.}{42}{section*.107}
