@@ -127,14 +127,14 @@ instrucciones:
 \item De la misma manera, crea dos botones adicionales para azul y
   verde, nombrados \component{BotónAzul} y \component{BotónVerde}
   respectivamente. Ponlos debajo del botón rojo. Chequea tu trabajo
-  comparándo con~\Cref{fig:paintPot1}.
+  comparándo con~\Cref{fig:PaintPot1}.
 \end{itemize}
 
 \begin{figure}[H]
 \centering
 % \includegraphics[scale=0.3]{PaintPot1}
 \caption{El \viewer con los tres botones creados.}
-\label{fig:paintPot1}
+\label{fig:PaintPot1}
 \end{figure}
 
 \paragraph{Importante!}
@@ -162,7 +162,7 @@ componente \component{DisposiciónHorizontal}.
 \centering
 % \includegraphics[scale=0.3]{PaintPot2}
 \caption{Los tres botones en disposición horizontal.}
-\label{fig:paintPot2}
+\label{fig:PaintPot2}
 \end{figure}
 
 \begin{enumerate}
@@ -244,9 +244,9 @@ componentes de disposición unos dentro de otros.
 \item Luego arrastra dos componentes \component{Botón} adicionales en
   el \viewer y ponlos dentro del \component{DisposiciónHorizontal} que
   acabas de agregar. Cambia el nombre del primer botón por
-  \component{BotonCámara} y su \property{Texto} a ``Sacar
+  \component{BotónCámara} y su \property{Texto} a ``Sacar
   Foto''. Cambia el nombre del segundo botón por
-  \component{BotonLimpiar} y su \property{Texto} por ``Limpiar''.
+  \component{BotónLimpiar} y su \property{Texto} por ``Limpiar''.
 
 \item Arrastra dos botones más y colócalos al lado derecho del
   \component{BotónLimpiar}.
@@ -296,6 +296,518 @@ configurar la propiedad \property{ColorDePintura} usando el bloque
 \property{ImagenDeFondo} del lienzo por una foto sacada con la cámara
 del dispositivo.
 
+\subsubsection*{Agregar el Evento Tocar para Dibujar un Punto}
+
+Primero, dispondrás los objetos de manera que cuando tocas el
+\component{LienzoDeDibujo}, se dibujara un punto en el lugar del lienzo que
+toques:
+	
+\begin{enumerate}
+
+\item En el \blockEditor, selecciona el \component{LienzoDeDibujo}, y
+  arrastra el bloque \block{LienzoDeDibujo.Tocado} al \viewer. El
+  bloque tiene parámetros para \parameter{x} e \parameter{y},
+  y \parameter{spriteTocado}, como ilustrado en
+  la~\Cref{fig:PaintPot5}. Estos parámetros entregan información sobre
+  la ubicación del evento ``tocar la pantalla'' hecho por el usuario.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot5}
+\caption{El evento viene con información sobre la ubicación del toque
+  en la pantalla}
+\label{fig:PaintPot5}
+\end{figure}
+
+\textbf{Nota}. Si completaste la aplicación \appName{Hola Gatito}, ya
+estás familiarizado con los eventos de \block{Botón.Click}, pero no
+con los eventos del lienzo. Los eventos \block{Botón.Click} son
+bastante sencillos porque no hay nada más que saber del evento aparte
+del hecho que ocurrió. Algunos controladores de eventos, sin embargo,
+vienen con información sobre los argumentos para llamar al evento. El
+evento \block{LienzoDibujo.Tocar} te entrega las
+coordenadas \parameter{x} e \parameter{y} del toque dentro del
+\component{LienzoDeDibujo}. También te dice si un objeto dentro del
+\component{LienzoDeDibujo} (lo que se conoce como \emph{Sprite}) fue
+tocado, pero este punto se abordará más adelante. Las
+coordenadas \parameter{x} e \parameter{y} son los argumentos que
+usaremos para grabar dónde el usuario tocó la pantalla, de manera de
+poder dibujar el punto en este lugar.
+
+\item Arrastra un bloque \block{LienzoDeDibujo.DibujarCírculo} desde
+  el bloque y ponlo dentro del controlador de eventos
+  \block{LienzoDeDibujo.Tocar}, como se ilustra en
+  la~\Cref{fig:PaintPot6}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot6}
+\caption{Cuando el usuario toca el lienzo, la aplicación dibuja un círculo}
+\label{fig:PaintPot6}
+\end{figure}
+
+Por el lado derecho del bloque
+\component{LienzoDeDibujo.DibujaCírculo}, verás tres espacios vacíos
+por completar con los argumentos
+siguientes: \parameter{x}, \parameter{y},
+y \parameter{r}. Los \parameter{x} e \parameter{y} especifican la
+ubicación donde el círculo se va a dibujar, y \parameter{r} determina
+el radio (o tamaño) del círculo.
+
+El signo amarillo con el punto de exclamación a la izquierda inferior
+de la pantalla aparecerá con un 1 cuando un espacio todavía permanece
+vacío. Construiremos los bloques para completar esto después.
+
+Este controlador de evento puede confundir un poco porque el evento
+\block{LienzoDeDibujo.Tocar} también tiene una \parameter{x} y
+una \parameter{y}. Solamente acuérdate que la \parameter{x} y
+la \parameter{y} para el evento \block{LienzoDeDibujo.Tocar} te dice
+dónde tocó el usuario, mientras que el \parameter{x} e \parameter{y}
+para el evento \block{LienzoDeDibujo.DibujarCírculo} son espacios
+abiertos para que tú definas donde el se dibujará el círculo. Dado que
+quieres que el círculo aparezca donde tocó el usuario, conectarás los
+valores \parameter{x} e \parameter{y} desde el
+\block{LienzoDeDibujo.Tocar} de la misma forma que los valores de los
+parámetros \parameter{x} e \parameter{y} en
+\block{LienzoDeDibujo.DibujarCírculo}.
+
+Nota. Puedes acceder a los valores del evento al pasar el mouse sobre
+los parámetros en el bloque ``Cuando''. Al hacerlo, aparecerán los
+bloques \block{tomar} y \block{poner a}. Arrastra el bloque
+\block{tomar x} y conéctalo como el valor faltante en
+para \parameter{x} en \block{LienzoDeDibujo.DibujarCírculo}, como se
+ilustra en la~\Cref{fig:PaintPot7}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot7}
+\caption{Para acceder al parámetro de un evento, arrastra un bloque
+  \block{tomar} desde el bloque \block{LienzoDeDibujo.Tocar}}
+\label{fig:PaintPot7}
+\end{figure}
+
+\item Arrastra los bloques \block{tomar x} y \block{tomar y} y
+  conéctalos en los espacios abiertos en el bloque
+  \block{LienzoDeDibujo.DibujarCírculo}, como se ilustra en
+  la~\Cref{fig:PaintPot8}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot8}
+\caption{La aplicación sabe donde dibujar (x,y), pero todavía necesitamos
+  especificar cuán grande debería ser el círculo.}
+\label{fig:PaintPot8}
+\end{figure}
+
+\item Ahora necesitas especificar el radio del círculo a dibujar. El
+  radio se mide en \emph{pixeles}, que es el punto más pequeño que
+  puede ser dibujado en la pantalla. Por ahora, ponle como valor el
+  número 5: haz click en una zona blanca de la pantalla y tipea 5,
+  luego presiona Enter para crear automáticamente un bloque numérico,
+  y conecta este bloque en el espacio para el
+  parámetro \parameter{r}. Cuando hagas esto, el signo amarillo en la
+  esquina inferior se pondrá en 0 nuevamente, dado que todos los
+  espacios abiertos habrán sido completados. La~\Cref{fig:PaintPot9}
+  muestra como debiera verse el controlador de eventos
+  \block{LienzoDeDibujo.Tocar}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot9}
+\caption{Cuando el usuario toca el \component{LienzoDeDibujo}, un
+  círculo de radio 5 será dibujado en las coordenadsa (x, y)
+  correspondientes.}
+\label{fig:PaintPot9}
+\end{figure}
+
+  \textbf{Nota}. Al poner un 5 en el \blockEditor y luego presionar
+  Enter, habrás usado lo que se llama \emph{tipeo de bloques}. Si
+  empiezas a tipear, el editor de bloques muestra un listado de
+  bloques cuyos nombres corresponden a lo que estás tipeando. Si
+  tipeas un número, crea un bloque numérico.
+
+  \paragraph{Prueba tu Aplicación!} Usa tu dispositivo para probar lo
+  que has desarrollado hasta ahora. Toca el
+  \component{LienzoDeDibujo}, tu dedo debería dejar un punto en cada
+  lugar que toques. Los puntos serán rojos si configuraste la
+  propiedad del \property{LienzoDeDibujo.ColorDePintura} como color
+  rojo en el \designer (sino será negro, que es el color por defecto).
+
+\end{enumerate}
+
+\subsubsection*{Agregar el Evento de Arrastre para Dibujar una Línea}
+
+Luego, agregarás el controlador de eventos de arrastre. La diferencia
+entre un touch y un arrastre es la siguiente:
+	
+\begin{itemize}
+\item Un touch es cuando pones tu dedo en la pantalla y solo lo
+  levantas para tocar, sin desplazarlo.
+
+\item Un arrastre es cuando pones tu dedo en la pantalla y lo mueves
+  al mantener contacto con la pantalla.
+\end{itemize}
+	
+En un programa de pintura, cuando arrastras tu dedo en la pantalla se
+dibuja una línea igual al camino que sigue tu dedo. Lo que estás
+haciendo en realidad es dibujar cientos de pequeñas líneas rectas;
+cada vez que mueves tu dedo, incluso un poco, extiendes la línea desde
+la última posición de tu dedo hacia su nueva posición.
+
+\begin{enumerate}
+	
+\item En el \blockEditor, desde la sección del
+  \component{LienzoDeDibujo}, arrastra el bloque
+  \block{LienzoDeDibujo.Arrastrado} al espacio de trabajo. Deberías
+  ver el gestionador de eventos tal como en la~\Cref{fig:PaintPot10}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot10}
+\caption{Un evento de arrastre tiene más argumentos que un evento de touch.}
+\label{fig:PaintPot10}
+\end{figure}
+
+El evento LienzoDibujo.Arrastre viene con los siguientes argumentos:
+
+\begin{itemize}
+
+\item \parameter{XInicial}, \parameter{YInicial}: la posición de tu
+  dedo donde empieza el arrastre.
+
+\item \parameter{XActual}, \parameter{YActual}: la posición actual de
+  tu dedo.
+
+\item \parameter{XPrevio}, \parameter{YPrevio}: la posición
+  inmediatamente anterior de tu dedo.
+
+\item \parameter{SpriteArrastrado}: un booleano, será verdad si el
+  usuario hace el arrastre directamente sobre un imagen Sprite. En el
+  taller no usaremos este argumento.
+
+\end{itemize}
+
+\item Arrastra el bloque \block{LienzoDeDibujo.DibujarLínea} dentro
+  del bloque \block{LienzoDeDibujo.Arrastrado} como se muestra en
+  la~\Cref{fig:PaintPot11}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot11}
+\caption{Agregando la habilidad de dibujar líneas}
+\label{fig:PaintPot11}
+\end{figure}
+
+El bloque \block{LienzoDeDibujo.DibujarLínea} tiene cuatro argumentos,
+dos para cada punto que determina la línea: un punto es
+(\parameter{x1}, \parameter{y1}), mientras que
+(\parameter{x2}, \parameter{y2}) es el otro. ¿Puedes adivinar qué
+valores corresponden a cada argumento?  Recuerda que el evento
+\block{LienzoDeDibujo.Arrastrado} se activará cada vez que arrastres
+tu dedo en el \viewer, por lo tanto la aplicación dibuja una pequeña
+línea cada vez que mueves tu dedo, desde
+(\parameter{XPrevio}, \parameter{YPrevio}) hacia
+(\parameter{XActual}, \parameter{YActual}). Agreguemos esto a nuestro
+bloque \block{LienzoDeDibujo.DibujarLínea}:
+
+\item Arrastra los bloques \block{tomar} para los argumentos que vas a
+  necesitar. Los valores \parameter{XPrevio} e \parameter{YPrevio}
+  deberían ir conectados en los espacios para los
+  argumentos \parameter{x1} e \parameter{y1}, respectivamente, como se
+  ilustra en la~\Cref{fig:PaintPot12}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot12}
+\caption{Cuando el usuario arrastre el dedo, la aplicación dibujará
+  una línea desde el punto anterior hacia el actual.}
+\label{fig:PaintPot12}
+\end{figure}
+
+\paragraph{Prueba tu Aplicación!} Arrastra tu dedo en la pantalla para
+dibujar líneas y curvas. Toca la pantalla para dibujar puntos.
+
+\end{enumerate}
+
+\subsubsection*{Agregar Controladores de Eventos para Botones}
+
+La aplicación que has construido hasta ahora permite al usuario
+dibujar, pero siempre estos dibujos usan el color rojo. El próximo
+paso consiste en agregar controladores de eventos para los botones de
+colores, para que el usuario pueda cambiar el color de la pintura, y
+otro para el \component{BotónLimpiar} para que pueda limpiar la
+pantalla y así volver a empezar a dibujar.
+
+En el \blockEditor:
+
+\begin{enumerate}
+\item Arrastra el bloque \block{BotónRojo.Click} al espacio de
+  trabajo.
+
+\item Arrastra el bloque \block{poner LienzoDeDibujo.ColorDePintura} y
+  conéctalo en las acciones del bloque \block{BotónRojo.Click}.
+
+\item Abre la sección ``Colores'' y arrastra el bloque de color rojo
+  para conectarlo con el bloque \block{poner
+    LienzoDeDibujo.ColorDePintura}.
+
+\item Repite los pasos anteriores para los botones azul y verde.
+
+\item El último botón por configurar es el
+  \component{BotónLimpiar}. Para limpiar el lienzo de dibujo debes
+  utilizar el bloque \block{LienzoDeDibujo.Limpiar}. Confirma que tus
+  bloques se ven como en la~\Cref{fig:PaintPot13}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot13}
+\caption{Cuando el usuario hace click en los botones de colores cambia
+el color para dibujar en el lienzo. Hacer click en ``Limpiar'', borra
+el contenido del lienzo.}
+\label{fig:PaintPot13}
+\end{figure}
+
+\end{enumerate}
+
+\subsubsection*{Permitir al Usuario Tomar un Foto}
+
+Las aplicaciones hechas con \AppInventor pueden interactuar con las
+funcionalidades de los dispositivos Android, incluyendo la
+cámara. Para personalizar la aplicación, se permite al usuario fijar
+la imagen de fondo de su dibujo con una foto tomada con la cámara.
+
+\begin{enumerate}
+
+\item El componente \component{Cámara} contiene dos bloques claves. El
+  bloque \block{Cámara.TomarFoto} inicia la aplicación de cámara del
+  teléfono. El evento \block{Cámara.DespuésDeTomarFoto} se activa
+  cuando el usuario terminó de sacar la foto. Agregarás bloques en el
+  controlador de eventos \block{Cámara.DespuésDeTomarFoto} para
+  configurar el \block{LienzoDeDibujo.ImagenDeFondo} con la foto que
+  fue sacada. Abre la sección de \component{BotónCámara} y arrastra el
+  controlador de evento \component{BotónCámara.Click} hacia el espacio
+  de trabajo.
+
+\item Arrastra el bloque \block{Cámara1.TomarFoto} y ponlo en el
+  controlador \block{BotónCámara.TomarFoto}.
+
+\item Arrastra el controlador de eventos
+  \block{Cámara1.DespuésDeTomarFoto} al espacio de trabajo.
+
+\item Arrastra el bloque \block{poner LienzoDeDibujo.ImagenDeFondo} y
+  ponlo en las acciones de \block{Cámara1.DespuésDeTomarFoto}.
+
+\item \block{Cámara1.DespuésDeTomarFoto} tiene un argumento
+  llamado \parameter{imagen}, que es la foto recién sacada. Puedes
+  referirte a ella, con un bloque ``tomar'' desde el bloque
+  \block{Cámara1.DespuésDeTomarFoto}. Conecta la imágen como el
+  argumento para el bloque \block{poner LienzoDeDibujo.ImagenDeFondo}.
+	
+  Los bloques deberían ser parecidos a la~\Cref{fig:PaintPot14}.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot14}
+\caption{CUando se saca la foto, se configura como la imagen de fondo
+  del lienzo.}
+\label{fig:PaintPot14}
+\end{figure}
+
+\paragraph{Prueba tu Aplicación!} Haz una prueba al hacer click en
+``Tomar Foto'' y saca una foto. El gatito debería cambiar por la foto
+que acabas de sacar, y luego podrás dibujar encima de la foto que
+sacaste.
+
+\end{enumerate}
+
+\subsubsection*{Cambiar el Tamaño del Punto}
+
+El tamaño de los puntos dibujados en el \component{LienzoDeDibujo} se
+determina al llamar a \block{LienzoDeDibujo.DibujarCírculo}, donde el
+argumento de radio está configurado en 5. Para cambiar el grueso de la
+línea, puedes cambiar el valor de \parameter{r}. Para probar esto,
+intenta cambiar el 5 por un 10 y pruébalo en el teléfono para ver cómo
+aparece.
+
+El único tamaño que el usuario podrá usar es él que tu indicas como
+argumento para el radio del círculo. ¿Pero qué pasa si el usuario
+quiere cambiar el tamaño de los puntos? Vamos a modificar el programa
+de manera que el usuario---no solo el programador---pueda cambiar el
+tamaño de los puntos. Lo haremos de tal manera que cuando el usuario
+haga click en un botón llamado ``Grandes'', el tamaño será 8, y cuando
+hará click en un botón llamado ``Pequeños'', será 2.
+
+Para usar distintos valores en el argumento radio, la aplicación
+necesita saber cuál queremos aplicar. Necesitamos pedirle usar un
+valor específico, y tiene que memorizar este valor de manera a poder
+seguir usándolo. Cuando tu aplicación necesita guardar algo en memoria
+que no sea una propiedad, puedes definir una \emph{variable}. Una
+variable es una \emph{celda de memoria}. Es como un balde donde puedes
+almacenar datos variables, como el tamaño del punto.
+
+Empezamos por definir una variable \variable{TamañoPunto}:
+
+\begin{enumerate}
+
+\item En el \blockEditor, desde la sección ``Variables'', arrastra un
+  bloque \block{Inicializar global nombre}. Cambia el texto
+  ``nombre'' por ``TamañoPunto''.
+
+\item Fíjate que el bloque \block{Inicializar global TamañoPunto}
+  tiene un espacio abierto. Ahí es donde puede especificar el valor
+  inicial de la variable, o su valor por defecto al iniciar la
+  aplicación. Para esta aplicación, inicializa el
+  \variable{TamañoPunto} en 2 creando un bloque con el número 2, y
+  conectándolo en \block{Inicializar global TamañoPunto} como se
+  ilustra en la~\Cref{fig:PaintPot15}.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot15}
+\caption{Inicializar variable global \variable{TamañoPunto} con valor
+  2.}
+\label{fig:PaintPot15}
+\end{figure}
+
+\subsubsection*{Usar las Variables}
+
+Ahora, queremos cambiar el argumento de
+\block{LienzoDeDibujo.DibujarCírculo} en el controlador de eventos
+\block{LienzoDibujo.Tocar} para que uses el valor
+\variable{TamañoPunto} en vez de usar siempre un número fijo. (Puede
+dar la ilusión que fijamos \variable{TamañoPunto} en 2 porque lo
+inicializamos de esta manera, pero verás en un minuto como podemos
+cambiar \variable{TamañoPunto} y asi cambiar el tamaño del punto que
+se dibuja.)
+
+\begin{enumerate}
+\item Arrastra un bloque ``tomar'' desde
+  \block{LienzoDeDibujo.DibujarCírculo}. Deberías ver un bloque
+  \block{tomar global TamañoPunto} que indica el valor de la variable.
+
+\item Anda al controlador de eventos \block{LienzoDeDibujo.Tocar} y
+  arrastra el bloque del número 5 fuera del espacio \parameter{r} y
+  pónlo en el papelero.  Luego reemplázalo con el bloque \block{tomar
+    global TamañoPunto} (Ver~\Cref{fig:PaintPot16}). Cuando el usuario
+  toca el lienzo, la aplicación determinará ahora el radio a partir de
+  la variable \variable{TamañoPunto}.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot16}
+\caption{Ahora el tamaño de cada círculo depende de lo
+que está guardado en la memoria de la variable TamañoPunto.}
+\label{fig:PaintPot16}
+\end{figure}
+
+\subsubsection*{Cambiar los valores de las variables}
+
+Aquí es donde la magia de las variables opera. La variable
+\variable{TamañoPunto} permite al usuario elegir el tamaño del
+círculo, y tu controlador de eventos dibujará el círculo en función de
+esto.  Desarrollaremos el comportamiento al programar los
+controladores de eventos \block{BotónPequeño.Click} y
+\block{BotónGrande.Click}.
+
+\begin{enumerate}
+
+\item Arrastra un controlador de eventos \block{BotónPequeño.Click}
+    al espacio de trabajo. Luego arrastra desde la categoría
+    ``Variables'' un bloque \block{poner a}, selecciona ``global
+    TamañoPunto'' como referencia y conectalo a
+    \block{BotónPequeño.Click}. Finalmente, crea un bloque número 2 y
+    conéctalo al bloque \block{poner global TamañoPunto}.
+
+\item Haz un controlador de eventos similar para
+  \block{BotónGrande.Click}, pero configura el \variable{TamañoPunto} en 8. Ambos gestionadores de eventos
+  deberían aparecer en el editor de bloques, como en la~\Cref{fig:PaintPot17}.
+
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot17}
+\caption{Hacer click en los botones cambia el tamaño del
+punto. Los toques que siguen serán con este tamaño de punto.}
+\label{fig:PaintPot17}
+\end{figure}
+
+\paragraph{Prueba tu Aplicación!} Intenta hacer click en los botones
+de tamaño y luego toca el lienzo. ¿Se dibujan círculos de distintos
+tamaños? ¿Las líneas? El tamaño de las líneas no debería cambiar
+porque programaste \variable{TamañoPunto} solamente para ser usado en
+el bloque de \block{DibujarCírculo}. En base a esto, ¿podrías ahora
+cambiar tus bloques para que el usuario también pueda cambiar el
+tamaño de la línea? (Nota que el lienzo tiene una propiedad llamada
+\property{AnchodeLinea})
+
+\subsubsection*{La App Completa: PintaFotos}
+
+La~\Cref{fig:PaintPot18} ilustra el código completo de la aplicación \appName{PintaFotos}:
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot18}
+\caption{Grupos de bloques para \appName{PintaFotos}.}
+\label{fig:PaintPot18}
+\end{figure}
+
+\subsubsection*{Ideas de Personalización}
+
+Aquí van algunas ideas y alternativas que puedes explorar:
+
+\begin{itemize}
+
+\item La interfaz de usuario de la aplicación no provee mucha
+  información sobre la configuración actual (por ejemplo, la única
+  manera de saber el tamaño de los puntos, o su color, es dibujar
+  algo). Modifica la aplicación para que esta configuración se le
+  muestre al usuario.
+
+\item Deja que el usuario ingrese el tamaño del punto en un componente
+  \component{CampoDeTexto}. Así, el usuario podrá usar otros valores
+  además de 2 y 8.
+\end{itemize}
+
+\subsubsection*{Resumen}
+
+Las ideas claves que hemos visto en este tutorial son las siguientes:
+
+\begin{itemize}
+
+\item El componente \component{Lienzo} te permite dibujar en un
+  lienzo. También es sensible a eventos ``touch'' y de arrastre, los
+  cuales puedes aprovechar para desarrollar funcionalidades para
+  dibujar.
+
+\item Puedes usar componentes de disposición en la pantalla para
+  organizar tus componentes en lugar de ponerlos todos uno debajo del
+  otro.
+
+\item Algunos controladores de eventos vienen con información sobre el
+  evento, como las coordenadas de donde la pantalla fue tocada. Esta
+  información está representada por argumentos. Cuando arrastras un
+  controlador de eventos que tiene argumentos, \AppInventor crea ítems
+  ``poner a'' y ``tomar'', dentro del bloque seleccionado, para así
+  poder referirse a estos argumentos.
+
+\item Crear variables al usar bloques \block{poner global nombre},
+  desde la categoría ``Variables''. Las variables permiten guardar
+  información en memoria, como el tamaño del punto, que no está
+  guardado en una propiedad de un componente.
+
+\item Para cada variable que definas, \AppInventor automáticamente
+  provee una referencia ``tomar global'' que entrega el valor de la
+  variable, y una referencia ``poner global a'' para cambiar el valor
+  de la variable. Para acceder a esto, arrastra un bloque ``poner a''
+  o ``tomar'' desde el mismo bloque donde declaras la variable.
+\end{itemize}
+
+El componente Lienzo también se puede usar para programar animaciones
+como las que ves en juegos en 2D.
+
 \section{Discusión y Ejercicios de Personalización}
 
 \section{Tutorial: Atrapa el Topo}
@@ -309,15 +821,6 @@ del dispositivo.
 \subsection*{Variables}
 
 \subsection*{Temporizadores}
-
-\begin{figure}[H]
-\centering
-% \includegraphics[scale=0.3]{HolaGatito}
-\caption{Pantalla de aplicación \appName{Hola Gatito}}
-\label{fig:holaGatito}
-\end{figure}
-
-
 
 
 \end{document}
