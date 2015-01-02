@@ -754,23 +754,6 @@ La~\Cref{fig:PaintPot18} ilustra el código completo de la aplicación \appName{
 \label{fig:PaintPot18}
 \end{figure}
 
-\subsubsection*{Ideas de Personalización}
-
-Aquí van algunas ideas y alternativas que puedes explorar:
-
-\begin{itemize}
-
-\item La interfaz de usuario de la aplicación no provee mucha
-  información sobre la configuración actual (por ejemplo, la única
-  manera de saber el tamaño de los puntos, o su color, es dibujar
-  algo). Modifica la aplicación para que esta configuración se le
-  muestre al usuario.
-
-\item Deja que el usuario ingrese el tamaño del punto en un componente
-  \component{CampoDeTexto}. Así, el usuario podrá usar otros valores
-  además de 2 y 8.
-\end{itemize}
-
 \subsubsection*{Resumen}
 
 Las ideas claves que hemos visto en este tutorial son las siguientes:
@@ -809,6 +792,62 @@ El componente Lienzo también se puede usar para programar animaciones
 como las que ves en juegos en 2D.
 
 \section{Discusión y Ejercicios de Personalización}
+
+\begin{enumerate}
+
+\item En el \component{Lienzo}, los controladores de eventos \block{Tocar} y
+\block{Arrastrado}, mostrados abajo en la~\Cref{fig:PaintPot20},
+tienen parámetros de evento. Nombra cada parámetro e indica lo que
+representa.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[scale=0.3]{PaintPot18}
+\caption{Grupos de bloques para \appName{PintaFotos}.}
+\label{fig:PaintPot18}
+\end{figure}
+
+\item Los parámetros de evento son distintos de los parámetros para llamar
+funciones. ¿Cómo se llaman los parámetros para llamar funciones en el
+controlador de eventos de la~\Cref{fig:PaintPot20}? ¿Quién especifica
+los parámetros de función? Quién especifica parámetros de eventos?
+
+\item ¿Cuál es el propósito de definir una variable para el Tamaño de Punto
+en la App Pinta Fotos? Si quieres permitir cambiar el grosor de las
+líneas, ¿necesitarás una variable?
+
+\item Define lo que es una variable. ¿Cuáles son sus puntos en común con una
+propiedad? ¿Cómo se diferencia de una propiedad?
+
+\item Una forma de personalizar la aplicación es poner un
+  \component{CuadroDeTexto} para el tamaño del punto. ¿Cuál es la
+  diferencia entre un cuadro de texto y una variable? ¿Cuál es la
+  diferencia entre una etiqueta y un cuadro de texto?
+
+\end{enumerate}
+
+\paragraph{Ejercicios para personalizar la app}
+
+\begin{enumerate}
+
+\item
+  La interfaz de usuario de \appName{PintaFoto} no permite mostrar con qué color
+  se está dibujando. El usuario sólo se da cuenta al dibujar. ¿Puedes
+  agregar esta información para el usuario de tal manera que cuando él
+  hace click para cambiar el color, la interfaz cambia y le indica qué
+  color fue elegido?
+
+\item
+  El tamaño del punto para dibujar un círculo sólo puede ser de 2 o 8.
+  ¿Puedes cambiar esto para permitir al usuario elegir entre distintas
+  opciones con un componente \component{Deslizador} o un
+  \component{CampoDeTexto}?
+
+\item Permitir al usuario controlar el grosor de las líneas, de la
+  misma manera que puede cambiar el tamaño del punto. El lienzo tiene
+  una propiedad \property{AnchoDeLinea} que controla esta
+  característica.
+\end{enumerate}
 
 \section{Tutorial: Atrapa el Topo}
 

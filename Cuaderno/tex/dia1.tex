@@ -1,7 +1,18 @@
 \section{Tutorial: Hola Gatito}
 \label{sec:tutor-hola-gatito}
 
-Típicamente el primer programa que se realiza para probar un nuevo computador o lenguaje de programación muestra el mensaje ``Hola Mundo'' para mostrar que todo está conectado y funcionando correctamente. En \AppInventor incluso las aplicaciones más simples pueden hacer mucho más que sólo mostrar mensajes: ellas pueden reproducir sonidos y reaccionar cuando el usuario toca el dispositivo. Así que vamos a comenzar con algo mucho más emocionante: tu primera aplicación se llamará \appName{Hola Gatito}. En general todas las aplicaciones se definen por sus pantallas visibles---lo que se conoce como la \textit{interfaz de usuario}---y su comportamiento. La pantalla de la aplicación se muestra en la Figura~\ref{fig:holaGatito}, y su comportamiento será como sigue:
+Típicamente el primer programa que se realiza para probar un nuevo
+computador o lenguaje de programación muestra el mensaje ``Hola
+Mundo'' para mostrar que todo está conectado y funcionando
+correctamente. En \AppInventor incluso las aplicaciones más simples
+pueden hacer mucho más que sólo mostrar mensajes: ellas pueden
+reproducir sonidos y reaccionar cuando el usuario toca el dispositivo.
+Así que vamos a comenzar con algo mucho más emocionante: tu primera
+aplicación se llamará \appName{Hola Gatito}. En general todas las
+aplicaciones se definen por sus pantallas visibles---lo que se conoce
+como la \textit{interfaz de usuario}---y su comportamiento. La
+pantalla de la aplicación se muestra en la
+Figura~\ref{fig:holaGatito}, y su comportamiento será como sigue:
 
 \begin{itemize}
 \item \whenDo{la imagen es presionada}{se emite el sonido de un  maullido y el dispositivo vibra.}
@@ -21,31 +32,58 @@ Siguiendo este tutorial aprenderás a:
 
 \begin{itemize}
 
-\item Construir aplicaciones en \AppInventor seleccionando componentes y diciéndoles qué hacer y cuándo hacerlo.
+\item Construir aplicaciones en \AppInventor seleccionando componentes
+  y diciéndoles qué hacer y cuándo hacerlo.
 
-\item Usar el \componentDesigner para seleccionar componentes. Algunos componentes son visibles en la pantalla del dispositivo mientras que otros no lo son.
+\item Usar el \componentDesigner para seleccionar componentes. Algunos
+  componentes son visibles en la pantalla del dispositivo mientras que
+  otros no lo son.
 
-\item Agregar archivos multimedia (sonidos e imágenes) a las aplicaciones, subiéndoles a \AppInventor desde tu computador.
+\item Agregar archivos multimedia (sonidos e imágenes) a las
+  aplicaciones, subiéndoles a \AppInventor desde tu computador.
 
-\item A usar el \blockEditor para ensamblar bloques de código que definen el comportamiento de los componentes, y que por lo tanto en conjunto definen el comportamiento de la aplicación.
+\item A usar el \blockEditor para ensamblar bloques de código que
+  definen el comportamiento de los componentes, y que por lo tanto en
+  conjunto definen el comportamiento de la aplicación.
 
-\item Probar las aplicaciones directamente en los dispositivos, lo que te ayudará a ver cómo las aplicaciones se comportan, paso a paso, a medida que las construyes.
+\item Probar las aplicaciones directamente en los dispositivos, lo que
+  te ayudará a ver cómo las aplicaciones se comportan, paso a paso, a
+  medida que las construyes.
 
-\item Empaquetar las aplicaciones que construyes para instalarlas en un dispositivo.
+\item Empaquetar las aplicaciones que construyes para instalarlas en
+  un dispositivo.
 
 \end{itemize}
 
 \subsection*{El Ambiente de Desarrollo \AppInventor}
 
-Para comenzar a programar con App Inventor debes acceder al sitio \aiurl.\footnote{Necesitas una cuenta de Google para utilizar \AppInventor} Esto abrirá la última versión de App Inventor, publicada en Diciembre de 2013. Algunas personas llaman a esta aplicación App Inventor 2, pero su nombre formal sigue siendo App Inventor, y la versión anterior se conoce como App Inventor Classic. Nosotros usaremos siempre la nueva versión.  El entorno de programación App Inventor tiene 3 partes esenciales:
+Para comenzar a programar con App Inventor debes acceder al sitio
+\aiurl.\footnote{Necesitas una cuenta de Google para utilizar
+  \AppInventor} Esto abrirá la última versión de App Inventor,
+publicada en Diciembre de 2013. Algunas personas llaman a esta
+aplicación App Inventor 2, pero su nombre formal sigue siendo App
+Inventor, y la versión anterior se conoce como App Inventor
+Classic. Nosotros usaremos siempre la nueva versión.  El entorno de
+programación App Inventor tiene 3 partes esenciales:
 
 \begin{itemize}
 
-\item El \componentDesigner, que se muestra en la Figura~\ref{fig:componentDesigner}. Se usa para seleccionar los componentes de la aplicación y especificar sus propiedades.
+\item El \componentDesigner, que se muestra en la
+  Figura~\ref{fig:componentDesigner}. Se usa para seleccionar los
+  componentes de la aplicación y especificar sus propiedades.
 
-\item El \blockEditor, que se muestra en la Figura~\ref{fig:blockEditor}. Se usa para especificar cómo se comportan los componentes (por ejemplo, qué pasa cuando se presiona un botón).
+\item El \blockEditor, que se muestra en la
+  Figura~\ref{fig:blockEditor}. Se usa para especificar cómo se
+  comportan los componentes (por ejemplo, qué pasa cuando se presiona
+  un botón).
 
-\item Un dispositivo Android que te permite ejecutar y probar las aplicaciones a medida que las vas desarrollando. Si no tienes un dispositivo Android disponible, puedes probar las aplicaciones usando el Emulador Android. Como en el taller utilizaremos teléfonos móviles no nos preocuparemos de cómo instalar y usar el emulador (igual puedes consultar a tu tutor cómo hacerlo, si quieres programar en tu casa).
+\item Un dispositivo Android que te permite ejecutar y probar las
+  aplicaciones a medida que las vas desarrollando. Si no tienes un
+  dispositivo Android disponible, puedes probar las aplicaciones
+  usando el Emulador Android. Como en el taller utilizaremos teléfonos
+  móviles no nos preocuparemos de cómo instalar y usar el emulador
+  (igual puedes consultar a tu tutor cómo hacerlo, si quieres
+  programar en tu casa).
 
 \end{itemize}
 
@@ -63,8 +101,15 @@ Para comenzar a programar con App Inventor debes acceder al sitio \aiurl.\footno
   \label{fig:blockEditor}
 \end{figure}
 
-La primera vez que ingreses a \aiurl, verás la página de Proyectos, la que seguramente estará en blanco porque aún no has creado ningún proyecto. Para crear un proyecto, presiona el botón ``Comenzar un proyecto nuevo'' en la esquina superior izquierda de la página, ingresa el nombre ``HolaGatito'' (los nombres de proyecto son sin
-espacios), y luego presiona ``Aceptar''. LaFigura~\ref{fig:crearProyecto} muestra la creación del proyecto \appName{Hola Gatito}.
+La primera vez que ingreses a \aiurl, verás la página de Proyectos, la
+que seguramente estará en blanco porque aún no has creado ningún
+proyecto. Para crear un proyecto, presiona el botón ``Comenzar un
+proyecto nuevo'' en la esquina superior izquierda de la página,
+ingresa el nombre ``HolaGatito'' (los nombres de proyecto son sin
+espacios), y luego presiona
+``Aceptar''. LaFigura~\ref{fig:crearProyecto} muestra la creación del
+proyecto \appName{Hola Gatito}.
+
 
 \begin{figure}[H]
   \centering
@@ -73,15 +118,35 @@ espacios), y luego presiona ``Aceptar''. LaFigura~\ref{fig:crearProyecto} muestr
   \label{fig:crearProyecto}
 \end{figure}
 
-La primera ventana que se abre es el \componentDesigner. El \blockEditor está disponible al hacer click en el botón ``Bloques'' en la esquina superior derecha de la ventana.
+La primera ventana que se abre es el \componentDesigner. El
+\blockEditor está disponible al hacer click en el botón ``Bloques'' en
+la esquina superior derecha de la ventana.
 
-\AppInventor es una herramienta computacional \emph{en la nube}, lo que significa que tu aplicación está almacenada en un servidor en línea mientras tú trabajas. Por lo tanto si cierras \AppInventor, tu aplicación estará ahí cuando regreses; no necesitas guardar nada en tu computador, como cuando trabajas con archivos de Word.
+\AppInventor es una herramienta computacional \emph{en la nube}, lo
+que significa que tu aplicación está almacenada en un servidor en
+línea mientras tú trabajas. Por lo tanto si cierras \AppInventor, tu
+aplicación estará ahí cuando regreses; no necesitas guardar nada en tu
+computador, como cuando trabajas con archivos de Word.
+
 
 \subsection*{Diseñando los Componentes}
 
-La primera herramienta que utilizarás es el \componentDesigner (o simplemente \designer). Los componentes son los elementos que combinas para crear aplicaciones, parecido a los ingredientes de una receta. Algunos componentes son muy simples, como una \component{Etiqueta}, la cual muestra texto en la pantalla, o un \component{Botón}, el cual presionas para iniciar una acción. Otros componentes son más elaborados: un \component{Lienzo} para dibujar, que puede contener imágenes estáticas (sin movimiento) y también animaciones; un \component{Acelerómetro}, que es un sensor de movimiento que funciona de manera parecida a un Wiimote y detecta cuando mueves o agitas el dispositivo. Otros componentes permiten enviar y recibir mensajes de texto (SMS), reproducir música, sonidos, videos, obtener información desde sitios web, etc.
+La primera herramienta que utilizarás es el \componentDesigner (o
+simplemente \designer). Los componentes son los elementos que combinas
+para crear aplicaciones, parecido a los ingredientes de una
+receta. Algunos componentes son muy simples, como una
+\component{Etiqueta}, la cual muestra texto en la pantalla, o un
+\component{Botón}, el cual presionas para iniciar una acción. Otros
+componentes son más elaborados: un \component{Lienzo} para dibujar,
+que puede contener imágenes estáticas (sin movimiento) y también
+animaciones; un \component{Acelerómetro}, que es un sensor de
+movimiento que funciona de manera parecida a un Wiimote y detecta
+cuando mueves o agitas el dispositivo. Otros componentes permiten
+enviar y recibir mensajes de texto (SMS), reproducir música, sonidos,
+videos, obtener información desde sitios web, etc.
 
-Cuando abras el \designer, éste aparecerá como se muestra en la Figura~\ref{fig:emptyDesigner}
+Cuando abras el \designer, éste aparecerá como se muestra en la
+Figura~\ref{fig:emptyDesigner}
 
 \begin{figure}[H]
   \centering
