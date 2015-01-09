@@ -53,6 +53,7 @@ Puedes construir la interfaz de usuario basándote en
 la~\Cref{fig:Sensors1}.
 
 \begin{figure}[H]
+\vspace{3em}
 \centering
 \includegraphics[scale=0.3]{Sensors1}
 \caption{La aplicación \appName{¿Dónde está mi Auto?} en el \componentDesigner.}
@@ -65,7 +66,7 @@ la Tabla~\ref{tab:Sensors1}.
 
 \begin{table}
 \begin{footnotesize}
-\begin{tabular}{|l|l|p{4cm}|}
+\begin{tabular}{|l|l|p{6cm}|}
 \hline
 Tipo de Componente & Nombre & Propósito\\\hline
 
@@ -271,7 +272,7 @@ muestra todos los bloques que necesitarás para realizar esto.
 \begin{table}
 \centering
 \begin{footnotesize}
-\begin{tabular}{|l|p{4cm}|}
+\begin{tabular}{|l|p{6cm}|}
 \hline
 Tipo de Bloque & Propósito\\\hline
 
@@ -351,7 +352,7 @@ funcionalidad.
 \begin{table}
 \centering
 \begin{footnotesize}
-\begin{tabular}{|l|p{4cm}|}
+\begin{tabular}{|l|p{6cm}|}
 \hline
 Tipo de Bloque & Propósito\\\hline
 
@@ -459,7 +460,7 @@ corresponde a la latitud y longitud de la ubicación almacenada.
 
 \begin{table}
 \centering
-\begin{tabular}{|l|p{4cm}|}
+\begin{tabular}{|l|p{6cm}|}
 \hline
 Tipo de Bloque & Propósito\\\hline
 
@@ -499,6 +500,7 @@ longitud.\\\hline
 \end{table}
 
 \begin{figure}[H]
+\vspace{3em}
 \centering
 \includegraphics[scale=0.5]{Sensors4}
 \caption{Construir la URL a usar para abrir Google Maps.}
@@ -548,7 +550,7 @@ necesitarás.
 
 \begin{table}
 \centering
-\begin{tabular}{|l|p{4cm}|}
+\begin{tabular}{|l|p{6cm}|}
 \hline
 Tipo de Bloque & Propósito\\\hline
 
@@ -589,6 +591,7 @@ valor es el lo que quieres almacenar---en este caso los datos de del
 \component{SensorDeUbicación}.
 
 \begin{figure}[H]
+\vspace{3em}
 \centering
 \includegraphics[scale=0.5]{Sensors5}
 \caption{Almacenando los datos de ubicación en una base de datos.}
@@ -620,6 +623,7 @@ Como desafío, ve si puedes crear estos bloques y compara tu creación
 con el código que se muestra en la~\Cref{fig:Sensors6}.
 
 \begin{figure}[H]
+\vspace{3em}
 \centering
 \includegraphics[scale=0.5]{Sensors6}
 \caption{Añadiendo la ubicación registrada a una base de datos para
@@ -699,286 +703,247 @@ Aquí van algunos de los conceptos que vimos en este tutorial:
 
 \subsection*{Geolocalización}
 
-
-% \hyperdef{}{}{\subsection{\texorpdfstring{{¿Cómo sabes donde
-% estas?}}{¿Cómo sabes donde estas?}}}
-
-% {LocationSensor}{~comunica con los satélites GPS y otros mecanismos para
-% determinar la ubicación de tu teléfono y tablet. }
-
-% {~~~~~~~~}
-
-% {~~~~~~~~}
-
-% {~~~~~~~~~~~~~~~~~~~~~~~~~}
-
-% \hyperdef{}{}{\subsubsection{\texorpdfstring{{Ejemplo 1. Como muestras
-% tu latitude, longitude y dirección
-% actual?}}{Ejemplo 1. Como muestras tu latitude, longitude y dirección actual?}}}
-
-% {~~~~~~~~~~~~~~~~~}{\includegraphics{images/image87.png}}{~~~~~~~~~~~~~~~~~
-% }{\includegraphics{images/image78.png}}{~~~~~~~~~~~~~~~~~}
-
-% {El evento }{LocationSensor.LocationChanged}{~se activa cuando:}
-
-% {1) por la primera vez la aplicación obtiene una lectura desde los
-% satélites GPS u otros mecanismos,}
-
-% {2) la ubicación del teléfono o tablet cambia. Si estás caminando,
-% podría activarse varias veces. }
-
-% {}
-
-% {Nota que puedes controlar la frecuencia de activación de
-% LocationChanged con las propiedades de }{LocationSensor.TimeInterval}{~y
-% }{LocationSensor.DistanceInterval}{. }{TimeInterval}{~está fijado a
-% 60.000 ms (1 minuto), por defecto. Eso quiere decir que
-% }{LocationChanged}{~será activado de nuevo solamente después de un
-% minuto.}
-
-% {~~~~~~~~}
-
-% {En el ejemplo, las lecturas de ubicación están mostradas en etiquetas
-% (labels). Latitude y longitude son números, mientras la propiedad
-% }{currentAddress }{provee una dirección (con calle, avenida, etc.) para
-% tu actual ubicación. Si caminasveráss los números y la dirección
-% cambiar.}{~~~~~~~~~~~~~~~~}
-
-% \hyperdef{}{}{\subsubsection{\texorpdfstring{{Exemplo 2. Como sabes lo
-% lejos que estás de un punto
-% dado?}}{Exemplo 2. Como sabes lo lejos que estás de un punto dado?}}}
-
-% {~~~~~~~~~~~~~~~~}{\includegraphics{images/image99.png}}{~~~~~~~~~~~~~~~~~}{\includegraphics{images/image38.png}}{~~~~~~~~~~~~~~~~~}
-
-% {App Inventor no provee un block ``distancia'' para calcular la
-% distancia entre dos coordenadas GPS. Pero existen fórmulas matemáticas
-% conocidas para aproximar la distancia entre dos puntos. La solución
-% consiste en crear tu propio block - una procedura - y conectarlo a las
-% fórmulas conocidas. Una vez que tienes la procedura distancia, puedes
-% llamarla al final del gestionador de evento LocationChanged. Este
-% ejemplo calcula la distancia entre tu ubicación actual y el campus de la
-% Universidad de San Francisco.~~~~~~~~}
-
-% \hyperdef{}{}{\section{\texorpdfstring{{Leer y contestar a los
-% sensores}}{Leer y contestar a los sensores}}}
-
-% {Apunta tu telefono al cielo y Google Sky Maps te dice que estrella
-% estas mirando. }
-
-% {Inclina tu teléfono y puedes controlar el juego al cual estás jugando.
-% Lleva tu teléfono mientras estás corriendo y una aplicación puede
-% registrar tu trayecto. Todas estas aplicaciones son posibles porque los
-% equipos móviles que tenemos tienen sensores de alta tecnología para
-% detectar nuestra ubicación, orientación y aceleración. }
-
-% {Hoy día, exploraremos los componentes de App Inventor LocationSensor,
-% OrientationSensor, y AccelerometerSensor. Durante el día, aprenderás
-% sobre GPS, mediciones de orientación y algo de matemática para procesar
-% las lecturas del acelerómetro.}
-
-% {}
-
-% {\includegraphics{images/image105.png}}
-
-% \hyperdef{}{}{\section{\texorpdfstring{{Creando aplicaciones basadas en
-% la ubicación}}{Creando aplicaciones basadas en la ubicación}}}
-
-% {Hasta la popularización del smartphone, computación era limitada a los
-% computadores de escritorio. Bueno, laptops son móviles, pero no en el
-% mismo sentido que pequeño equipos que podemos poner en nuestros
-% bolsillos. Computación ha dejado las oficinas y los laboratorios y se
-% está moviendo afuera en todo el mundo.}
-
-% {Un efecto significante de llevar nuestro equipo de computación con
-% nosotros es nueva y muy interesante data: la ubicación actual. Saber
-% donde la gente se encuentra mientras se está moviendo en el mundo tiene
-% grandes implicaciones y el potencial de ayudarnos en nuestras vidas.
-% También tiene el potencial de invadir nuestra privacidad y ser al
-% detrimento de la humanidad.}
-
-% {La aplicación ``Android, dónde está mi auto?'' es un ejemplo de una
-% aplicación basada en la ubicación que trae beneficio personal. Esta
-% aplicación es privada, tu información de ubicación está almacenada
-% únicamente en la base de datos de tu teléfono. }
-
-% {Medición de ubicación puede también ser utilizada por grupos. Por
-% ejemplo, un grupo de personas que está haciendo un trekking podría
-% querer seguir los movimientos de los otros en la montaña, o colegas de
-% trabajos podrían querer poder encontrarse en una grande conferencia.
-% Algunas personas utilizan este tipo de aplicación ``check-in'' todos los
-% días.}
-
-% {Otro tipo de aplicación basada en la ubicación utiliza herramientas de
-% realidad aumentada. Estas aplicaciones utilizan tu ubicación y la
-% orientación de tu teléfono para proveer extra-información que aumenta
-% los ajustes naturales. Podrías apuntar tu teléfono hacia un edificio y
-% ver el precio del mercado inmobiliario, o podrías caminar cerca de una
-% planta exótica en un jardín y ver cual especie es con tu aplicación. }
-
-% \hyperdef{}{}{\subsection{\texorpdfstring{{GPS}}{GPS}}}
-
-% {Para crear aplicaciones basadas en la ubicación, primero tienes que
-% entender como el GPS (}{global positioning system - sistema de
-% posicionamiento global}{) funciona. Datos GPS vienen de un sistema de
-% satélites mantenido por el gobierno estadounidense. Siempre y cuando
-% existe una vista despejada de al menos 3 satélites en el sistema, tu
-% teléfono puede obtener una lectura. Una lectura GPS consiste en tu
-% latitud, longitud y altitud. Latitud es cuanto lejos del ecuador hacia
-% el norte o el sur te encuentras, con valores positivas hacia el norte y
-% negativas hacia el sur. La gama de valores es de -90 a 90. La Figura
-% 23-1 muestra un mapa Google de un lugar cerca de Quito, capital del
-% Ecuador. La Latitud mostrada en el mapa es -0.01, apenas al sur del
-% ecuador (Quito, Ecuador, is on the equator)!}
-
-% {}
-
-% {\includegraphics{images/image12.png}}{~}
-
-% {}
-
-% {}
-
-% {Longitud es cuanto lejos del primer meridiano hacia el este o oeste te
-% encuentras, con valores positivas hacia este y negativas hacia el
-% oeste.}
-
-% {El lugar lo más conocido por el cual pasa este meridiano es Greenwich,
-% una ciudad cerca de Londres en Reino-Unido, casa del Observatorio Royal.
-% El mapa de la Figura 23-2 muestra Greenwich y su longitud es 0.0.}
-
-% {}
-
-% {\includegraphics{images/image112.png}}{~}{\includegraphics{images/image63.png}}{~}
-
-% {El Observatorio Real en Greenwich lanza un rayo de luz a lo largo del
-% primer meridiano. Longitud varia entre -180 y 180. ~}
-
-% {La
-% }{\href{http://www.google.com/url?q=http\%3A\%2F\%2Fwww.appinventor.org\%2FChapter23\%23point_near_the_russianen_dashalaskan_bor\&sa=D\&sntz=1\&usg=AFQjCNEX4p122bb2iXiMhhlqsMpnfeInKA}{Figura
-% 23-3}}{~muestra un lugar en Rusia, muy cerca de Alaska, que tiene 180.0
-% de longitud. Podrías decir que tal lugar se encuentra a medio camino
-% alrededor del mundo desde Greenwich (0.0 longitude).}
-
-% {}
-
-% {\includegraphics{images/image109.png}}{~}
-
-% {Un lugar cerca de la frontera de Rusia y Alaska que tiene una longitud
-% de 180.}
-
-% \hyperdef{}{}{\subsection{\texorpdfstring{{Medir ubicación con App
-% Inventor}}{Medir ubicación con App Inventor}}}
-
-% {App Inventor viene con el componente }{LocationSensor}{~para acceder a
-% información GPS. El componente tiene propiedades para }{Latitude}{,
-% }{Longitude}{, y }{Altitude}{.También comunica con Google Maps, para que
-% puedas tener una lectura para tu dirección actual.}
-
-% {LocationSensor.LocationChanged}{, mostrado
-% en}{\href{http://www.google.com/url?q=http\%3A\%2F\%2Fwww.appinventor.org\%2FChapter23\%23locationsensor1dotlocationchanged_event\&sa=D\&sntz=1\&usg=AFQjCNF_DFT3L2AmqH22WfYqvqUMejx0DA}{~}}{\href{http://www.google.com/url?q=http\%3A\%2F\%2Fwww.appinventor.org\%2FChapter23\%23locationsensor1dotlocationchanged_event\&sa=D\&sntz=1\&usg=AFQjCNF_DFT3L2AmqH22WfYqvqUMejx0DA}{Figura
-% 23-4}}{, es el gestionador de evento más importante de
-% }{LocationSensor}{.}
-
-% {\includegraphics{images/image05.png}}{~}
-
-% {Figura 23-4. El gestionador de evento LocationSensor1.LocationChanged }
-
-% {}
-
-% {Este evento está activado la primera vez que el sensor tiene una
-% lectura y cada vez que el teléfono está movido lo suficiente para que
-% nueva data pueda ser leída. Es frecuente tener una demora de algunos
-% segundos antes de la primera lectura de una aplicación, y a veces el
-% equipo no puede obtener lectura. Por ejemplo, si estás en una pieza
-% cerrada y no conectado al WiFi, podría ser que el equipo no obtenga una
-% lectura. Tu telefono tambien tiene ajustes que te permiten apagar la
-% lectura GPS para ahorrar batería; es otra potencial razón por la cual el
-% equipo podría no obtener lectura.}
-
-% {Por estas razones, no tienes que suponer que las propiedades
-% }{LocationSensor}{~tienen ajustes validados hasta que el evento
-% }{LocationSensor.LocationChanged }{pase.}
-
-% {Una manera de manejar lo desconocido en medición de ubicación es crear
-% una variable }{lastKnownLocation (ultimaUbicacionConocida)}{,
-% inicializarla a ``desconocida'' (``unknown'') y después hacer que el
-% gestionador de evento }{LocationSensor.LocationChanged}{~cambie el valor
-% de la variable, como lo muestra la Figura siguiente.}
-
-% {}
-
-% {\includegraphics{images/image104.png}}{Figura 23-5. El valor de la
-% variable lastKnownLocation cambia junto con el cambio de ubicación }
-
-% {}
-
-% {Programando el gestionador de evento
-% }{LocationSensor.LocationChanged}{~de esta manera, siempre podrás
-% mostrar la ubicación actual o registrarla en una base de datos, con
-% ``unknown'' (``desconocido'') apareciendo hasta la primera lectura. Esta
-% estrategia está utilizada en la aplicación de No Texting mientras
-% manejas.}
-
-% {También puedes preguntar explícitamente si el sensor tiene una lectura
-% utilizando el block }{LocationSensor.HasLongitudeLatitude}{~(ver
-% }{\href{http://www.google.com/url?q=http\%3A\%2F\%2Fwww.appinventor.org\%2FChapter23\%23testing_whether_the_sensor_has_a_reading\&sa=D\&sntz=1\&usg=AFQjCNEwevv6X5vh-FZJRU_Rlfhj6QtNEQ}{Figure
-% 23-6}}{).}
-
-% {}
-
-% {\includegraphics{images/image44.png}}{~}
-
-% {Figura 23-6. Testeando si el sensor tiene una lectura con el block
-% HasLongitudeLatitude.}
-
-% \hyperdef{}{}{\subsection{\texorpdfstring{{Averiguando los
-% límites}}{Averiguando los límites}}}
-
-% {Un uso común del evento }{LocationChanged}{~es de averiguar si el
-% equipo se encuentra dentro de una zona. Por ejemplo, considera el código
-% de la Figura 23-7, que hace vibrar el teléfono cada vez que una nueva
-% lectura muestra que el usuario se ha movido más lejos que 0.1 de
-% longitud desde el primer meridiano.}
-
-% {}
-
-% {\includegraphics{images/image97.png}}
-
-% {~}
-
-% {Figura 23-7. Si una lectura no está cerca del primer meridiano, el
-% teléfono vibra.}
-
-% {}
-
-% {Tal revisión de límites (zona límite) tiene varias aplicaciones; por
-% ejemplo alertar personas en libertad condicional si se encuentran a una
-% distancia superior de su casa que la distancia límite, o alertar padres
-% o profesores si un niño se mueve fuera del parque infantil. }
-
-% \hyperdef{}{}{\subsection{\texorpdfstring{{Proveedores de información de
-% ubicación: GPS, WiFi, y Cell
-% ID}}{Proveedores de información de ubicación: GPS, WiFi, y Cell ID}}}
-
-% {Un equipo Android puede determinar su ubicación de varias maneras. El
-% método más preciso - dentro de algunos metros - es a través de los
-% satélites GPS. Sin embargo, no tendrás lectura si te encuentras en un
-% edificio y que hay rascacielos o otros objetos entre ti y los satélites;
-% necesitás poder acceder al menos a 3 satélites del sistema.}
-
-% {Si el GPS no está disponible o que el usuario lo ha desactivado, el
-% equipo puede obtener su ubicación a través de una red inalámbrica.
-% Tienes que estar cerca de un router WiFi y la lectura de ubicación que
-% obtendrás será la latitude y longitude del router WiFi.}
-
-% {Una tercera manera con la cual un equipo puede determinar su ubicación
-% es a través de Cell ID. Cell ID provee una ubicación para el telefono,
-% basada en la fuerza de los señales de las torres celulares cerca del
-% usuario. En general este método no es muy preciso, excepto si tienes
-% varias torres celulares cerca de ti. Sin embargo, utiliza una mínima
-% cantidad de batería comparado a los métodos basados en GPS y WiFi.}
-
-
+Los dispositivos de geolocalización, o más conocidos como GPS, se
+comunican con una serie de satélites y otros mecanismos para
+determinar la ubicación de tu teléfono o tablet. La pregunta esencial
+que responden estos sensores es: ``¿Dónde estoy?''
+
+\paragraph{Ejemplo: ¿Cómo muestras tu latitud, longitud y dirección
+  actual?}
+
+El evento \block{SensorDeUbicación.CambioEnUbicación} se activa:
+
+\begin{enumerate}
+
+\item la primera vez la aplicación obtiene una lectura desde los
+  satélites GPS u otros mecanismos.
+
+\item cuando la ubicación del dispositivo cambia. Si estás caminando,
+  podría activarse varias veces.
+
+\end{enumerate}
+
+Nota que puedes controlar la frecuencia de activación de
+\block{CambioEnUbicación} con las propiedades
+\property{SensorDeUbicación.IntervaloDeTemporizador} y
+\property{SensorDeUbicación.IntervaloDeDistancia}. Por defecto, el
+\property{IntervaloDeTemporizador} tiene valor de 60.000 milisegundos,
+(1 minuto). Eso quiere decir que \block{CambioEnUbicación} será
+activado de nuevo solamente después de un minuto.
+
+En el ejemplo de la~\Cref{fig:Geo1}, las lecturas de ubicación se
+muestran en etiquetas. La latitud y longitud son números, mientras que
+la propiedad \property{DirecciónActual} provee una dirección (con
+calle, avenida, etc.) para la ubicación actual. Si caminas verás que
+los números y la dirección cambian.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo1}
+  \caption{Mostrando la latitud, longitud, y dirección actuales.}
+  \label{fig:Geo1}
+\end{figure}
+
+\paragraph{Ejemplo: ¿Cómo sabes lo lejos que estás de un punto dado?}
+
+\AppInventor no provee un bloque ``distancia'' para calcular la
+distancia entre dos coordenadas GPS. Pero existen fórmulas matemáticas
+conocidas para aproximar la distancia entre dos puntos. La solución
+consiste en crear tu propio block---un procedimiento--- y conectarlo a
+las fórmulas conocidas. Una vez que tienes la el procedimiento para la
+distancia, puedes llamarla al final del controlador de evento
+\block{CambioDeUbicación}. El ejemplo de la~\Cref{fig:Geo2} muestra
+cómo se calcula la distancia entre el punto actual y las oficinas de
+Inria Chile.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo2}
+  \caption{Calculando la distancia entre dos coordenadas GPS.}
+  \label{fig:Geo2}
+\end{figure}
+
+El procedimiento \procedure{distancia} es un poco más sofisticado que
+los que hemos visto hasta ahora: posee 4 parámetros, y además devuelve
+un valor como resultado. Veremos esto en más detalle en el Día 7 del
+taller.
+
+
+\subsubsection*{Creando aplicaciones basadas en la ubicación}
+
+Hasta la popularización de los smartphones, la computación estaba
+limitada a los computadores de escritorio. Bueno, los laptops son
+móviles, pero no en el mismo sentido que los pequeños equipos que
+podemos poner en nuestros bolsillos. La computación ha dejado las
+oficinas y los laboratorios y se está moviendo afuera en todo el
+mundo.
+
+Un efecto significante de llevar nuestro equipo de computación con
+nosotros es poder utilizar un dato nuevo y muy interesante: la
+ubicación actual. Saber dónde se encuentra la gente mientras se está
+moviendo en el mundo tiene grandes implicaciones y el potencial de
+ayudarnos en nuestras vidas.  También tiene el potencial de invadir
+nuestra privacidad y ser un detrimento de la humanidad.
+
+La aplicación \appName{¿Dónde está mi Auto?} es un ejemplo de una
+aplicación basada en la ubicación que trae un beneficio personal. Esta
+aplicación es privada, la información de tu ubicación está almacenada
+únicamente en la base de datos de tu teléfono.
+
+La medición de ubicación puede también ser utilizada por grupos. Por
+ejemplo, un grupo de personas que está haciendo trekking podría querer
+seguir los movimientos de los otros en la montaña, o colegas de
+trabajos podrían querer poder encontrarse en una gran conferencia.
+Algunas personas utilizan este tipo de aplicación ``check-in'' todos
+los días.
+
+Otro tipo de aplicación basada en la ubicación utiliza herramientas de
+\emph{realidad aumentada}. Estas aplicaciones utilizan tu ubicación y
+la orientación de tu teléfono para proveer información extra que
+aumenta los ajustes naturales. Podrías apuntar tu teléfono hacia un
+edificio y ver el precio del mercado inmobiliario, o podrías caminar
+cerca de una planta exótica en un jardín y ver cuál especie es con
+alguna aplicación.
+
+\paragraph{GPS}
+
+Para crear aplicaciones basadas en la ubicación, primero tienes que
+entender como el GPS (\emph{Global Positioning System} en inglés, o
+\emph{Sistema de Posicionamiento Global}) funciona. Los datos GPS
+vienen de un sistema de satélites mantenido por el gobierno
+estadounidense. Siempre y cuando existe una vista despejada de al
+menos 3 satélites en el sistema, tu teléfono puede obtener una
+lectura. Una lectura GPS consiste en tu latitud, longitud y
+altitud. Latitud es cuán lejos de la línea del Ecuador hacia el norte
+o el sur te encuentras, con valores positivos hacia el norte y
+negativos hacia el sur. La gama de valores es de -90 a
+90. La~\Cref{fig:Geo3} muestra un mapa Google de un lugar cerca de
+Quito, capital del Ecuador. La latitud mostrada en el mapa es 0.08,
+apenas al norte de la línea del Ecuador.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo3}
+  \caption{Un lugar muy cercano a la línea del Ecuador.}
+  \label{fig:Geo3}
+\end{figure}
+
+La longitud es cuán lejos del primer meridiano hacia el este u oeste
+te encuentras, con valores positivos hacia el este y negativos hacia
+el oeste. El lugar más conocido por el cual pasa el meridiano es
+Greenwich, una ciudad cerca de Londres, casa del Observatorio Real. El
+mapa de la~\Cref{fig:Geo4} muestra Greenwich y su longitud es muy
+cercana a $0.0$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo4}
+  \caption{Un lugar muy cercano al meridiano de Greenwich.}
+  \label{fig:Geo4}
+\end{figure}
+
+\paragraph{Medir la ubicación con \AppInventor}
+
+\AppInventor viene con el componente \component{SensorDeUbicación}
+para acceder a información del GPS. El componente tiene propiedades
+para la \property{Latitud}, \property{Longitud}, y
+\property{Altitud}. También secomunica con Google Maps, para que
+puedas tener una lectura para tu dirección actual.
+
+El evento \block{SensorDeUbicación.CambioEnUbicación}, mostrado en
+la~\Cref{fig:Geo5}, es el controlador de evento más importante del
+\component{SensorDeUbicación}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo5}
+  \caption{Un lugar muy cercano al meridiano de Greenwich.}
+  \label{fig:Geo5}
+\end{figure}
+
+Este evento se activa la primera vez que el sensor tiene una lectura y
+cada vez que el teléfono se mueve lo suficiente como para que una
+nueva ubicación pueda ser leída. Es frecuente tener una demora de
+algunos segundos antes de la primera lectura de una aplicación, y a
+veces el equipo no puede obtener lectura. Por ejemplo, si estás en una
+pieza cerrada y sin conexión WiFi, podría ser que el equipo no obtenga
+una lectura. Tu telefono tambien tiene ajustes que te permiten apagar
+la lectura GPS para ahorrar batería; es otra potencial razón por la
+cual el equipo podría no obtener lectura.
+
+Por estas razones, no tienes que suponer que las propiedades del
+\component{SensorDeUbicación} tienen valores válidos hasta que se
+active el evento \block{CambioEnUbicación}.
+
+Una manera de manejar lo desconocido en la medición de ubicación es crear
+una variable \variable{ultimaUbicaciónConocida}, inicializarl como
+``desconocida'' y después hacer que el controlador de evento cambie el valor
+de la variable, como lo muestra la~\Cref{fig:Geo6}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo6}
+  \caption{El valor de la variable \variable{ultimaUbicaciónConocida}
+    cambia junto con el cambio de ubicación.}
+  \label{fig:Geo6}
+\end{figure}
+
+Programando el controlador de evento
+\block{SensorDeUbicación.CambioEnUbicación} de esta manera, siempre
+  podrás mostrar la ubicación actual o registrarla en una base de
+  datos, con ``desconocido'' apareciendo hasta la primera lectura.
+
+También puedes preguntar explícitamente si el sensor tiene una lectura
+utilizando el bloque \block{SensorDeUbicación.TieneLongitudYAltitud},
+como se muestra en la~\Cref{fig:Geo7}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo7}
+  \caption{Probando si el sensor tiene una lectura con el bloque \block{TieneLongitudYAltitud}.}
+  \label{fig:Geo7}
+\end{figure}
+
+\paragraph{Averiguando los límites}
+
+Un uso común del evento \block{CambioEnUbicación} es de averiguar si
+el equipo se encuentra dentro de una zona geográfica. Por ejemplo,
+considera el código de la~\Cref{fig:Geo8}, que hace vibrar el teléfono
+cada vez que una nueva lectura muestra que el usuario se ha movido más
+lejos que 0.1 de longitud desde el primer meridiano.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Geo8}
+  \caption{Si una lectura no está cerca del primer meridiano, el
+    teléfono vibra.}
+  \label{fig:Geo8}
+\end{figure}
+
+Tal revisión de límites (zona límite, o \emph{geocercas}) tiene varias aplicaciones; por
+ejemplo alertar personas en libertad condicional si se encuentran a una
+distancia superior de su casa que la distancia límite, o alertar padres
+o profesores si un niño se mueve fuera del parque infantil.
+
+\paragraph{Proveedores de información de ubicación: GPS, WiFi, y Cell ID}
+
+Un equipo Android puede determinar su ubicación de varias maneras. El
+método más preciso---dentro de algunos metros---es a través de los
+satélites GPS. Sin embargo, no tendrás lectura si te encuentras en un
+edificio y si hay rascacielos u otros objetos entre ti y los
+satélites; necesitas poder acceder al menos a 3 satélites del sistema.
+
+Si el GPS no está disponible o el usuario lo ha desactivado, el equipo
+puede obtener su ubicación a través de una red inalámbrica.  Tienes
+que estar cerca de un router WiFi y la lectura de ubicación que
+obtendrás será la latitude y longitude del router WiFi.
+
+Una tercera manera con la cual un equipo puede determinar su ubicación
+es a través de Cell ID. Cell ID provee una ubicación para el telefono,
+basada en la fuerza de los señales de las torres celulares cerca del
+usuario. En general este método no es muy preciso, excepto si tienes
+varias torres celulares cerca de ti. Sin embargo, utiliza una mínima
+cantidad de batería comparado a los métodos basados en GPS y WiFi.
 
 \subsection*{Otros Sensores}
 
