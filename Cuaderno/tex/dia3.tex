@@ -10,12 +10,12 @@ los llamaremos simplemente \emph{sprites}. Los sprites están
 especialmente diseñados para la creación de animaciones y videojuegos,
 y deben utilizarse dentro de un componente \component{Lienzo}. Dentro
 de un lienzo, el sprite tiene una \property{Dirección}, una
-\property{Velocida} y un \property{Intervalo}. Además, un sprite puede
+\property{Velocidad} y un \property{Intervalo}. Además, un sprite puede
 colisionar con los bordes del lienzo, y con otros
 sprites. La~\Cref{fig:spriteMap} cómo se orienta un sprite dentro del
 lienzo. La dirección del sprite se representa mediante un ángulo,
 entre 0 y 360 grados. El ángulo 0 representa el movimiento hacia la
-derecha, y el ángulo 360 hacia la izquierda. Además, los bordes del
+derecha, y el ángulo 180 hacia la izquierda. Además, los bordes del
 lienzo están identificados por números, como se ve en la figura.
 
 \begin{figure}[H]
@@ -335,7 +335,7 @@ es programar una aplicación para que recuerde información.
 
 Cuando alguien te dice el número de teléfono de una pizzería, tu
 cerebro lo almacena en una \emph{celda de memoria}. Si alguien
-menciona algunos números para que tu los sumes, tu también almacenas
+menciona algunos números para que tú los sumes, tú también almacenas
 estos números y los resultados intermedios en una celda de memoria. En
 estos casos, no estás totalmente conciente de cómo tu cerebro almacena
 o recuerda la información.
@@ -659,7 +659,7 @@ la~\Cref{fig:Variable9}.
 \label{fig:Variable9}
 \end{figure}
 
-Si la variable es requerida en un solo lugar, es una buena idea
+Si la variable es requerida en un sólo lugar, es una buena idea
 definirla como local en vez de global. Al proceder de tal manera,
 limitas las dependencias en tu aplicación y te aseguras de que no
 modificarás una variable por error. Imagina que una variable local es
@@ -671,7 +671,7 @@ puedan tener acceso a ella!
 Cuando inicias una aplicación, ésta empieza a ejecutar sus operaciones
 y a responder a eventos que ocurren. Al responder a eventos, la
 aplicación a veces necesita recordar cosas. Para un juego, puede ser
-que tenga que recordar el marcador de cada jugador or la dirección en
+que tenga que recordar el marcador de cada jugador o la dirección en
 la cual se mueve un objeto.
 
 Tu aplicación recuerda cosas con propiedades de componentes, pero
