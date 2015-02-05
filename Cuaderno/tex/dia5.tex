@@ -242,8 +242,8 @@ mapas o aplicaciones, ver la documentación de App Inventor en
   sensor ha leído una ubicación y que está listo para guardarla.
 
 \item Cuando el usuario presiona el \component{BotónRecordar}, copia
-  los datos de la ubicación actual en las etiquetas hacia la ubicación
-  a recordar.También necesitarás almacenar los datos de la ubicación a
+  los datos desde la ubicación actual en las etiquetas hacia la ubicación
+  a recordar. También necesitarás almacenar los datos de la ubicación a
   recordar para que estén guardados de forma persistente si el usuario
   cierra y vuelve a abrir la aplicación.
 
@@ -252,7 +252,7 @@ mapas o aplicaciones, ver la documentación de App Inventor en
   para que muestre indicaciones para llegar a la ubicación almacenada.
 
 \item Cuando la aplicación sea abierta nuevamente, carga la ubicación
-  almacenada desde la base de datos dentro de la base de datos.
+  almacenada desde la base de datos en las etiquetas de datos recordados.
 \end{itemize}
 
 \subsubsection*{Mostrar la ubicación actual}
@@ -311,7 +311,7 @@ Bloque lógico \block{cierto} & Se conecta en el bloque \block{poner BotónRecor
 \label{tab:Sensors3}
 \end{table}
 
-Como se muestra en la~\Cref{fig:NoSensors2},
+Como se muestra en la~\Cref{fig:Sensors2},
 la \parameter{latitud}, \parameter{longitud} y \parameter{altitud} son
 los argumentos del evento \block{CambioDeUbicación}. La
 \property{DirecciónActual} no es un argumento, sino una propiedad del
@@ -543,7 +543,7 @@ aplicación que desarrollaste ayer:
 
 Empezarás modificando el controlador de evento
 \block{BotónRecordar.Click} para que almacene los datos
-registrados. Para guardar la latitud, longitude, y dirección,
+registrados. Para guardar la latitud, longitud, y dirección,
 necesitarás tres llamadas a \block{TinyDB.GuardarValor}. La
 Tabla~\ref{tab:Sensors6} muestra los bloques adicionales que
 necesitarás.
@@ -604,7 +604,7 @@ Almacenas datos en una base de datos para que puedas acceder a estos
 datos en el futuro. En este aplicación, si un usuario almacena una
 ubicación y después cierra la aplicación, quieres recuperar esta
 información desde la base de datos y mostrarla al usuario cuando
-lanzará la aplicación de nuevo.
+lance la aplicación de nuevo.
 
 Como se vio en los días anteriores, el evento
 \component{Screen.Inicializar} se activa cuando tu aplicación se
@@ -650,7 +650,7 @@ si está vacío o contiene datos.
 
 El bloque condicional es necesario porque \component{TinyDB} devuelve
 texto vacío si no hay datos para una etiqueta dada; no hay ningún
-datos la primera vez que la aplicación está lanzada y no habrá hasta
+dato la primera vez que la aplicación es lanzada y no habrá hasta
 que el usuario presione el \component{BotónRecordar}. Dado que ahora
 la variable \variable{direcciónTemporal} tiene el valor devuelto,
 debes averiguar si el largo de \variable{direcciónTemporal} es
@@ -665,7 +665,7 @@ se activa el \component{BotónMostrarIndicaciones}.
 \paragraph{Prueba tu Aplicación!} Descarga la nueva versión de tu
 aplicación en tu teléfono y pruebala de nuevo. Presiona el
 \component{BotónRecordar} y asegúrate que las lecturas están
-registradas. Luego cierra la aplicación y abrela de nuevo. ¿Los datos
+registradas. Luego cierra la aplicación y ábrela de nuevo. ¿Los datos
 registrados aparecen?
 
 \subsection*{Resumen}
@@ -876,7 +876,7 @@ Por estas razones, no tienes que suponer que las propiedades del
 active el evento \block{CambioEnUbicación}.
 
 Una manera de manejar lo desconocido en la medición de ubicación es crear
-una variable \variable{ultimaUbicaciónConocida}, inicializarl como
+una variable \variable{ultimaUbicaciónConocida}, inicializar como
 ``desconocida'' y después hacer que el controlador de evento cambie el valor
 de la variable, como lo muestra la~\Cref{fig:Geo6}.
 
@@ -936,7 +936,7 @@ satélites; necesitas poder acceder al menos a 3 satélites del sistema.
 Si el GPS no está disponible o el usuario lo ha desactivado, el equipo
 puede obtener su ubicación a través de una red inalámbrica.  Tienes
 que estar cerca de un router WiFi y la lectura de ubicación que
-obtendrás será la latitude y longitude del router WiFi.
+obtendrás será la latitud y longitud del router WiFi.
 
 Una tercera manera con la cual un equipo puede determinar su ubicación
 es a través de Cell ID. Cell ID provee una ubicación para el telefono,
