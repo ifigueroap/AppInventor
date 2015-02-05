@@ -231,7 +231,7 @@ Para programa el texto de la respuesta, colocaras un bloque
 \block{EnviarTexto1.EnviarMensaje} dentro del controlador de eventos
 \block{EnviarTexto1.MensajeRecibido}. El bloque
 \block{EnviarTexto.EnviarMensaje} envía el texto, pero debes con
-anterioridad especificar qué texto hay que enviar y aquién hay que
+anterioridad especificar qué texto hay que enviar y a quién hay que
 enviarlo, antes de utilizar este bloque. La Tabla~\ref{tab:NoSMS2}
 muestra todos los bloques que necesitarás para programar el
 comportamiento de respuesta automática, y la~\Cref{fig:NoSMS3} muestra
@@ -274,7 +274,7 @@ para ser enviado.\\\hline
 
 Cuando el teléfono recibe un mensaje de texto, el evento
 \block{EnviarTexto1.MensajeRecibido} se activa. Como lo muestra
-la~\Cref{fig:NoSMS3}, el número de telefono del que llama (el
+la~\Cref{fig:NoSMS3}, el número de teléfono del que llama (el
 remitente) se encuentra en el argumento \parameter{número}, y el
 mensaje de texto recibido está en el
 argumento \parameter{textoDeMensaje}.
@@ -298,7 +298,7 @@ el código. Puedes añadir comentarios con un click derecho sobre un
 bloque y seleccionando ``Añadir Comentario''. Una vez que has añadido
 comentarios, puedes mostrarlos o esconderlos haciendo un click en el
 signo de interrogación azul que aparece. No es obligatorio que
-incluyes comentarios en tu aplicación, los incluimos en el ejemplo
+incluyas comentarios en tu aplicación, los incluimos en el ejemplo
 para ayudar a describir cada bloque y lo que hace.
 
 La mayoría de las personas utilizan comentarios para documentar cómo
@@ -423,7 +423,7 @@ correcta?
   de datos y guardarlos en variables o propiedades.
 \end{enumerate}
 
-Empezaras por modificar el controlador de evento
+Empezarás por modificar el controlador de evento
 \component{BotónCambiarRespuesta.Click} para que almacene datos de
 manera persistente, usando los bloques listados en la
 Tabla~\ref{tab:NoSMS4}.
@@ -453,7 +453,7 @@ respuesta.\\\hline
 Esta aplicación utiliza \component{TinyDB} para tomar el texto que está en
 \component{EtiquetaRespuesta} y almacenarlo en la base de datos. Como
 lo muestra la~\Cref{fig:NoSMS5}, cuando almacenas datos en la base de
-datos, ttienes que marcar o etiquetar tus datos, para poder
+datos, tienes que marcar o etiquetar tus datos, para poder
 recuperarlos posteriormente. En este caso la etiqueta es
 ``mensajeRespuesta''.
 
@@ -646,7 +646,7 @@ mensaje es''.\\\hline
 Después de enviar la respuesta automática, la aplicación llama a la
 función \block{TextoAVoz.Hablar}, como lo muestra
 la~\Cref{fig:NoSMS8}. Puedes conectar cualquier objeto de texto en el
-parámetro \parameter{mensaje}. En este caso,se usa\block{unir}{join}
+parámetro \parameter{mensaje}. En este caso,se usa \block{unir}{join}
 para construir las palabras por ser habladas. \emph{Concatena} (o
 añade, o pega juntos) el texto ``Mensaje recibido de '' y el número de
 teléfono del remitente, seguido por el texto ``. El mensaje es'', y
